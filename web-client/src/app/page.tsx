@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <div className="flex flex-col sm:items-center sm:justify-center bg-blue-100 min-h-dvh text-black gap-4">
       <div className="md:w-[720px] lg:w-[960px] w-full flex-1 md:flex-none md:h-auto overflow-auto sm:rounded-2xl bg-white shadow-2xl flex flex-col sm:px-8 px-4 sm:py-4 py-2">
-        <div className="sm:text-[48px] text-[36px] font-bold text-black text-center sm:mt-4 mt-16 italic">Report Pothole</div>
+        <div className="sm:text-[48px] text-[36px] font-bold text-black text-center sm:mt-4 mt-16 italic">Describe Issue</div>
         <div className="flex-1 flex flex-col gap-4 mt-8">
           <div className="flex flex-col lg:flex-row lg:gap-8 gap-4 mt-8 sm:mt-0">
             <div className="flex-1 flex flex-col gap-1 items-stretch">
@@ -30,8 +30,8 @@ export default function Home() {
             <div className="flex-1 flex flex-col gap-1 items-stretch">
               <div className="text-xs ml-2">Location</div>
               <div className="flex gap-2 items-start">
-                <input value={lat} onChange={(e) => setLat(e.target.value)} className="flex-1 outline-none bg-blue-50 py-1 px-2 rounded min-w-0" placeholder="Lat"/>
-                <input value={lon} onChange={(e) => setLon(e.target.value)} className="flex-1 outline-none bg-blue-50 py-1 px-2 rounded min-w-0" placeholder="Lon"/>
+                <input value={lat} onChange={(e) => setLat(e.target.value)} className="flex-1 outline-none bg-blue-50 py-1 px-2 rounded min-w-0" placeholder="Latitude"/>
+                <input value={lon} onChange={(e) => setLon(e.target.value)} className="flex-1 outline-none bg-blue-50 py-1 px-2 rounded min-w-0" placeholder="Longitude"/>
                 <button hidden={!locationAvailable} onClick={() => {
                   navigator.geolocation.getCurrentPosition(
                     (position) => {
@@ -76,7 +76,7 @@ export default function Home() {
           <div>&bull;</div>
           <div className="hidden sm:block">Pothole Detection Platform</div>
           <div className="hidden sm:block">&bull;</div>
-          <Link href={"/login"} className="text-blue-600">Login As Admin</Link>
+          <Link href={"/login"} className="text-blue-600">Admin Login</Link>
         </div>
       </div>
     </div>
