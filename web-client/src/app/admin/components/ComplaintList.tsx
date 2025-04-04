@@ -31,7 +31,7 @@ function ComplaintListItem({ onReject, onAccept }: { onReject: () => void, onAcc
                 <div className="text-md font-bold text-sm">Name</div>
                 <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus metus eget eros euismod porta sed ut arcu. Nam semper tempor finibus. Suspendisse mollis ligula eu libero dignissim, nec aliquet nunc blandit. Vivamus tempus ullamcorper purus, eu cursus magna dapibus eget. Maecenas ut elit vitae velit volutpat lobortis. Integer sodales eleifend leo ut aliquam. Praesent consequat accumsan augue, id interdum ex semper consequat. Maecenas vel pharetra nunc.</div>
                 <div className="flex flex-row-reverse gap-2 mt-1">
-                    <button onClick={() => setConfirmDialogShown(true)} className="rounded-full px-6 py-1.5 bg-blue-200">Accept</button>
+                    <button onClick={() => setConfirmDialogShown(true)} className="rounded-full px-6 py-1.5 bg-green-200">Accept</button>
                     <button onClick={() => onReject()} className="rounded-full px-6 py-1.5 border">Reject</button>
                 </div>
             </div>
@@ -45,7 +45,7 @@ function ComplaintListItem({ onReject, onAccept }: { onReject: () => void, onAcc
                 <button onClick={() => {
                     setConfirmDialogShown(false)
                     onAccept("")
-                }} className="rounded-full px-6 py-1.5 bg-blue-200/80 backdrop-blur-lg mt-4 max-w-96 w-full self-center">Confirm</button>
+                }} className="rounded-full px-6 py-1.5 bg-green-200/80 backdrop-blur-lg mt-4 max-w-96 w-full self-center">Confirm</button>
             </div>
         </div>
     )

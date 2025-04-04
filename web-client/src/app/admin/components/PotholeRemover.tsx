@@ -31,7 +31,7 @@ export function PotholeRemover() {
                 <div>Running Request...</div>
             </div>
             { notifications.map((item, index) => (
-                <div key={index} className="flex gap-4 items-center bg-green-50 p-4 rounded-xl">
+                <div key={index} className="flex gap-4 items-center bg-blue-50 p-4 rounded-xl">
                     <div className="flex-1 text-center">{item}</div>
                     <button onClick={() => {
                         notifications.splice(index, 1)

@@ -17,7 +17,7 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=add_location_alt,admin_panel_settings,arrow_back_ios_new,close,error,logout,my_location,travel_explore,unpaved_road" />
       </head>
       <body
-        className={`bg-blue-100`}
+        className={`bg-green-100`}
       >
         {children}
       </body>

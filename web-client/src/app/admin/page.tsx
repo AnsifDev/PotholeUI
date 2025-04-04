@@ -38,7 +38,7 @@ export default async function Page() {
     if (!mcookies.has("username")) redirect("/login")
 
     return (
-        <div className="min-h-dvh bg-blue-50 text-black flex flex-col">
+        <div className="min-h-dvh bg-green-50 text-black flex flex-col">
             <header className="flex px-6 items-start">
                 <div className="text-2xl font-bold py-2 flex-1 text-center ml-12 mt-8 mb-6">Admin Portal</div>
                 {/* <div className="flex-1"/> */}

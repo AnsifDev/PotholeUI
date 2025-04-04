@@ -30,11 +30,12 @@ export async function removePothole(placeName: string) {
 export async function authenticate(username: string, password: string) {
     await setTimeout(3000)
 
-    const sucess = username == "user1" && password == "password"
+    const success = (username == "user1" && password == "password")
     const mcookies = await cookies()
-    mcookies.set("username", username)
+    if (success) 
+        mcookies.set("username", username)
 
-    return sucess
+    return success
 }
 
 export async function logout() {

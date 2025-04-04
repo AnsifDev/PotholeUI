@@ -17,11 +17,11 @@ export function LoginPage() {
           <div className="text-center text-2xl font-bold mt-4">Admin Login</div>
           <div className="flex flex-col gap-1 items-stretch mt-8">
             <div className="text-xs ml-2">Username</div>
-            <input type="email" value={username} onChange={(e) => setUsername(e.target.value)} className="outline-none bg-blue-50 py-1 px-2 rounded"/>
+            <input type="email" value={username} onChange={(e) => setUsername(e.target.value)} className="outline-none bg-green-50 py-1 px-2 rounded"/>
           </div>
           <div className="flex flex-col gap-1 items-stretch mt-2">
             <div className="text-xs ml-2">Password</div>
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="outline-none bg-blue-50 py-1 px-2 rounded"/>
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="outline-none bg-green-50 py-1 px-2 rounded"/>
           </div>
           <div hidden={!error} className="flex flex-row justify-center p-2 rounded-lg bg-red-100 mt-8 gap-4 text-red-900">
             <div className="material-symbols-rounded">error</div>
@@ -29,13 +29,13 @@ export function LoginPage() {
           </div>
           <button disabled={loading} onClick={() => {
             setLoading(true)
-            authenticate(username, password).then((sucess) => {
+            authenticate(username, password).then((success) => {
               setLoading(false)
-              if (sucess) router.push("/admin")
+              if (success) router.push("/admin")
               else setError(true)
             })
             
-          }} className="self-center rounded-full px-32 py-2 bg-blue-100 mt-8">{loading? "Signing In...": "Sign In"}</button>
+          }} className="self-center rounded-full px-32 py-2 bg-green-100 mt-8">{loading? "Signing In...": "Sign In"}</button>
       </div>
     )
 }

@@ -18,20 +18,20 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="flex flex-col sm:items-center sm:justify-center bg-blue-100 min-h-dvh text-black gap-4">
+    <div className="flex flex-col sm:items-center sm:justify-center bg-green-100 min-h-dvh text-black gap-4">
       <div className="md:w-[720px] lg:w-[960px] w-full flex-1 md:flex-none md:h-auto overflow-auto sm:rounded-2xl bg-white shadow-2xl flex flex-col sm:px-8 px-4 sm:py-4 py-2">
         <div className="sm:text-[48px] text-[36px] font-bold text-black text-center sm:mt-4 mt-16 italic">Describe Issue</div>
         <div className="flex-1 flex flex-col gap-4 mt-8">
           <div className="flex flex-col lg:flex-row lg:gap-8 gap-4 mt-8 sm:mt-0">
             <div className="flex-1 flex flex-col gap-1 items-stretch">
               <div className="text-xs ml-2">Your Name</div>
-              <input value={name} onChange={(e) => setName(e.target.value)} className="outline-none bg-blue-50 py-1 px-2 rounded"/>
+              <input value={name} onChange={(e) => setName(e.target.value)} className="outline-none bg-green-50 py-1 px-2 rounded"/>
             </div>
             <div className="flex-1 flex flex-col gap-1 items-stretch">
               <div className="text-xs ml-2">Location</div>
               <div className="flex gap-2 items-start">
-                <input value={lat} onChange={(e) => setLat(e.target.value)} className="flex-1 outline-none bg-blue-50 py-1 px-2 rounded min-w-0" placeholder="Latitude"/>
-                <input value={lon} onChange={(e) => setLon(e.target.value)} className="flex-1 outline-none bg-blue-50 py-1 px-2 rounded min-w-0" placeholder="Longitude"/>
+                <input value={lat} onChange={(e) => setLat(e.target.value)} className="flex-1 outline-none bg-green-50 py-1 px-2 rounded min-w-0" placeholder="Latitude"/>
+                <input value={lon} onChange={(e) => setLon(e.target.value)} className="flex-1 outline-none bg-green-50 py-1 px-2 rounded min-w-0" placeholder="Longitude"/>
                 <button hidden={!locationAvailable} onClick={() => {
                   navigator.geolocation.getCurrentPosition(
                     (position) => {
@@ -42,14 +42,14 @@ export default function Home() {
                       console.error(error.message);
                     }
                   );
-                }} className="material-symbols-rounded px-2 py-1 rounded !text-base hover:bg-blue-50">my_location</button>
+                }} className="material-symbols-rounded px-2 py-1 rounded !text-base hover:bg-green-50">my_location</button>
               </div>
             </div>
             
           </div>
           <div className="flex flex-col gap-1 items-stretch">
             <div className="text-xs ml-2">Complaint</div>
-            <textarea value={complaint} onChange={(e) => setComplaint(e.target.value)} className="outline-none bg-blue-50 py-1 px-2 rounded-md min-h-32"/>
+            <textarea value={complaint} onChange={(e) => setComplaint(e.target.value)} className="outline-none bg-green-50 py-1 px-2 rounded-md min-h-32"/>
           </div>
           <div hidden={!success} className="flex flex-row p-4 rounded-lg bg-green-100">
             <div className="ml-12 text-center flex-1">Complaint submitted sucessfully</div>
@@ -65,9 +65,9 @@ export default function Home() {
               setComplaint("")
               setSuccess(true)
             })
-          }} className="self-center rounded-full px-32 py-2 bg-blue-100">{loading? "Submitting": "Submit"}</button>
+          }} className="self-center rounded-full px-32 py-2 bg-green-100">{loading? "Submitting": "Submit"}</button>
         </div>
-        {/* <div className="flex flex-row sm:my-8 my-4 min-h-13 gap-4 pl-4 pr-1.5 py-1.5 bg-blue-50 rounded-lg">
+        {/* <div className="flex flex-row sm:my-8 my-4 min-h-13 gap-4 pl-4 pr-1.5 py-1.5 bg-green-50 rounded-lg">
           <div className="text-sm flex-1 self-center">By submitting the complaint, we actually </div>
           <Link href={"/nodes/create"} className="text-nowrap bg-white py-1 px-6 flex items-center rounded-md">Agree & Submit</Link>
         </div> */}
