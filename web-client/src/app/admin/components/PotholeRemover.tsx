@@ -1,6 +1,6 @@
 "use client"
 
-import { removePothole } from "@/port";
+import { removePothole } from "@/ports";
 import { useState } from "react"
 
 export function PotholeRemover() {
@@ -19,11 +19,12 @@ export function PotholeRemover() {
                     setProcessing(true)
                     removePothole(place).then((value) => {
                         setProcessing(false)
-                        setNotifications([...notifications, value])
+                        setNotifications([...notifications, `${value} Pothole locactions on the name ${place} were removed`])
+                        setTimeout(() => {
+                            notifications.splice(notifications.length, 1)
+                            setNotifications([ ...notifications ])
+                        }, 3000)
                     })
-                    setTimeout(() => {
-                        
-                    }, 3000)
                 }} className="rounded-md bg-red-200 text-red-900 px-3 py-1.5">Delete</button>
             </div>
             <div hidden={!processing} className="flex gap-4 items-center justify-center bg-yellow-100 p-4 rounded-xl animate-pulse">
