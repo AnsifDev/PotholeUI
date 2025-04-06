@@ -63,17 +63,17 @@ function ComplaintListItem({ complaint, onReject, onAccept }: { complaint: Compl
             <div className="flex flex-col p-6 gap-2">
                 <div className="text-md font-bold text-sm">{complaint.name}</div>
                 <div>{complaint.complaint}</div>
+                <button onClick={() => {
+                    window.open(`https://google.com/maps?q=${complaint.latitude},${complaint.longitude}`)
+                }} className="sm:absolute flex top-4 right-4 text-sm italic px-4 py-0.5 border rounded hover:bg-purple-50/60 gap-4">
+                    <div>Location Annotated: {complaint.latitude}, {complaint.longitude}</div>
+                    <div className="material-symbols-rounded !text-sm">open_in_new</div>
+                </button>
                 <div className="flex flex-row-reverse gap-2 mt-1">
                     <button onClick={() => setConfirmDialogShown(true)} className="rounded-full px-6 py-1.5 bg-purple-200">Accept</button>
                     <button onClick={() => onReject()} className="rounded-full px-6 py-1.5 border">Reject</button>
                 </div>
             </div>
-            <button onClick={() => {
-                window.open(`https://google.com/maps?q=${complaint.latitude},${complaint.longitude}`)
-            }} className="absolute flex top-4 right-4 text-sm italic px-4 py-0.5 border rounded hover:bg-purple-50/60 gap-4">
-                <div>Location Annotated: {complaint.latitude}, {complaint.longitude}</div>
-                <div className="material-symbols-rounded !text-sm">open_in_new</div>
-            </button>
             <div hidden={!confirmDialogShown} className="w-full h-full backdrop-blur-sm flex flex-col p-6 gap-2 absolute justify-center">
                 <button onClick={() => setConfirmDialogShown(false)} className="material-symbols-rounded absolute top-6 left-6 p-1.5 rounded-md hover:bg-amber-50/50 backdrop-blur-lg">arrow_back_ios_new</button>
                 <div className="material-symbols-rounded !text-[64px] text-center">add_location_alt</div>

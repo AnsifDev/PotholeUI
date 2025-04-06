@@ -9,7 +9,7 @@ import { redirect } from "next/navigation";
 function ComplaintListItemSkel() {
     return (
         <div className="min-h-48 bg-amber-100 rounded-xl flex flex-col p-6 gap-2 animate-pulse">
-            <div className="h-7 w-96 rounded-lg bg-amber-50"/>
+            <div className="h-7 sm:w-96 w-32 rounded-lg bg-amber-50"/>
             <div className="h-6 w-full rounded-lg bg-amber-50 mt-2"/>
             <div className="h-6 w-full rounded-lg bg-amber-50"/>
             <div className="h-6 w-64 rounded-lg bg-amber-50"/>
@@ -45,7 +45,7 @@ export default async function Page() {
                 <LogoutButton />
             </header>
             <main className="flex-1 mb-4 flex flex-col lg:flex-row min-h-96 max-w-[1680px] w-full self-center gap-4 px-4">
-                <div className="flex flex-1 flex-col bg-white rounded-2xl p-8 gap-4">
+                <div className="flex flex-1 flex-col bg-white rounded-2xl sm:p-8 px-3 py-6 gap-4">
                     <div className="text-neutral-600 ml-2">Complaints</div>
                     <Suspense fallback={<ComplaintListSkel />}>
                         <ComplaintListLoader />
