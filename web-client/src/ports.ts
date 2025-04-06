@@ -106,8 +106,9 @@ export async function removePothole(placeName: string) {
 
 export async function authenticate(username: string, password: string) {
     const snapshot = await getDoc(doc(usersCol, username))
-    const usrObject = snapshot.data() as User
+    if (!snapshot.exists()) return false
 
+    const usrObject = snapshot.data() as User
     const success = usrObject.password == password
     const mcookies = await cookies()
     if (success) 
